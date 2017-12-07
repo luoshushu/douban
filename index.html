@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="//unpkg.com/jquery@1.9.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="referrer" content="never">
+  <title>豆瓣电影</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_441448_mlcvb2bmxurz4cxr.css">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,body,main{
+      height: 100%;
+      position: relative;
+    }
+    body{
+      font-size: 12px;
+      line-height: 1.1;
+    }
+    a{
+      text-decoration: none;
+      color: #ccc;
+    
+    }
+    main>section{
+      height: calc(100% - 50px);
+      padding: 10px;
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+    main>section{
+       display: none;
+     }
+    main>section:first-child{
+      display: block;
+    }
+    .box{
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+    .box>a{
+      /*display: block;*/
+      display: flex;
+    }
+    .box .print,
+    .box .print img{
+      height: 90px;
+      width: 65px;
+    }
+    .box .text{
+      padding-left: 10px;
+      flex: 1;
+    }
+    .box .text h2{
+      font-size: 16px;
+      color: #2B2B2B;
+    }
+    .text .intro{
+      color: #999;
+      margin-top: 3px;
+    }
+   .text .grade{
+     color: #FF5722 ;
+   }
+  .loading {
+    text-align: center;
+    padding-top: 10px;
+    color: #33AA61;
+  }
+  .loading .iconfont{
+    display: inline-block;
+    animation: 1s rotate linear infinite;
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg);  }
+  }
+    section .striping{
+      border-bottom:1px solid #ccc;
+      padding-bottom: 10px;
+      position: relative;
+
+    }
+    section .striping input{
+      width: calc(100% - 60px);
+      padding: 7px;
+      background: #eeeeee;
+      border: none;
+      border-radius: 2px;
+      outline: none;
+      box-shadow: 1px 1px 1px 1px #ccc;
+    }
+    section .striping .button{
+      margin-left: 2px;
+      padding: 7px 15px;
+      border-radius: 5px;
+      background: #33AA61;
+      color: #000;
+      cursor: pointer;
+  }
+    section .striping .shift{
+      display: none;
+      position: absolute;
+      right: 70px;
+      bottom: 15px;
+      cursor: pointer;
+      color: #666666;
+    }
+
+    footer{
+      position: absolute;
+      bottom: 0;
+      height: 50px;
+      width: 100%;
+      display: flex;
+      box-shadow: 0 0 0 1px #ccc;
+    }
+    footer>div{
+      flex: 1;
+      text-align: center;
+      padding-top: 10px;
+      color: #666;
+    }
+    footer>div>span{
+      display: block;
+    }
+    footer .result{
+      color: #33AA61;
+    }
+
+  </style>
+</head>
+<body>
+<main>
+  <section id="top250">
+    <div class="container"></div>
+    <div class="loading"><span class="iconfont icon-fon4"></span></div>
+  </section>
+  <section id="usBox">
+    <div class="container"></div>
+    <div class="loading"><span class="iconfont icon-fon4"></span></div>
+  </section>
+  <section id="hunt">
+    <div class="striping">
+      <input type="text" placeholder="搜索电影">
+      <span class="iconfont icon-fon5 shift"></span><span class="button">搜索</span>
+    </div>
+    <div class="container"></div>
+    <div class="loading"><span class="iconfont icon-fon4"></span></div>
+  </section>
+</main>
+
+<footer>
+    <div class="result">
+    <span class="iconfont icon-fon1"></span>
+    <span>Top250</span>
+    </div>
+    <div>
+      <span class="iconfont icon-fon2"></span>
+      <span>北美</span>
+    </div>
+    <div>
+      <span class="iconfont icon-fon3"></span>
+      <span>搜索</span>
+    </div>
+</footer>
+<script data-main="./js/main.js" src="https://cdn.bootcss.com/require.js/2.3.5/require.min.js"></script>
+
+</body>
+</html>
